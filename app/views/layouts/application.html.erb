@@ -33,6 +33,13 @@
       </div><!-- /.container-fluid -->
     </nav>
 
+    <ul class= "nav justify-content-end">
+      <%- if user_signed_in? %>
+        <li class= "nav-item">
+          <%= link_to "Salir", destroy_user_session_path, method: :delete %>
+        </li>
+      <% end %>
+    </ul>
     <%= yield %>
   </body>
 </html>
