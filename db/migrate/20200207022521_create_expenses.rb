@@ -5,9 +5,8 @@ class CreateExpenses < ActiveRecord::Migration[6.0]
       t.date :date
       t.string :concept
       t.decimal :amount
-
       t.timestamps null: false
     end
-    add_foreign_key :expenses, :categories
+    add_foreign_key :expenses, :categories, :users
   end
 end
