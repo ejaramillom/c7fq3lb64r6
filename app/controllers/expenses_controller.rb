@@ -1,7 +1,8 @@
 class ExpensesController < ApplicationController
   def index
 	@expenses = Expense.order("date DESC")
-	@expenses = Expense.where(user_id: current_user.id)
+	# @expenses = Expense.where(user_id: current_user.id)
+  @expenses = Expense.where(User.find_by(id: session[:user_id]))
 
 	if user_signed_in?
 
