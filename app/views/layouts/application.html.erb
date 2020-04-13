@@ -33,7 +33,7 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <ul class= "nav justify-content-end">
+    <ul class= "nav navbar-nav navbar-right">
       <%- if user_signed_in? %>
         <li class= "nav-item">
           <%= link_to "Salir", destroy_user_session_path, method: :delete %>
