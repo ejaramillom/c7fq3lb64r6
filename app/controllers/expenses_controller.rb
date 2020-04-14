@@ -2,9 +2,7 @@ class ExpensesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-	# @expenses = Expense.order("date DESC")
 	@expenses = Expense.where(user_id: current_user.id).order("date DESC")
-  #@expenses = Expense.where(User.find_by(id: session[:user_id]))
 
   	if user_signed_in?
   		if params[:concept].present?
@@ -16,6 +14,6 @@ class ExpensesController < ApplicationController
   	else
   		redirect_to new_user_session_path
   	end
-    end
+  end
 
 end
